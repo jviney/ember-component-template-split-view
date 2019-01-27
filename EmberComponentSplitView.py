@@ -7,9 +7,9 @@ class EmberComponentSplitViewCommand(sublime_plugin.WindowCommand):
 	def findCompanionPodStructure(self):
 		if 'hbs' in self.reference_file_type:
 			if 'components' in self.reference_file_path:
-				companion_file = self.reference_file_path + '/component.js'
+				companion_file = self.reference_file_path + '/component.ts'
 			else:
-				companion_file = self.reference_file_path + '/route.js'
+				companion_file = self.reference_file_path + '/route.ts'
 		else:
 			companion_file = self.reference_file_path + '/template.hbs'
 
@@ -22,10 +22,10 @@ class EmberComponentSplitViewCommand(sublime_plugin.WindowCommand):
 
 		if 'hbs' in self.reference_file_type:
 			if 'components' in self.reference_file_path:
-				companion_file_name = self.reference_file_name.rsplit('.', 1)[0] + '.js'
+				companion_file_name = self.reference_file_name.rsplit('.', 1)[0] + '.ts'
 				companion_file = base_path + 'components/' + self.reference_file_location + '/' + companion_file_name
 			else:
-				companion_file_name = self.reference_file_name.rsplit('.', 1)[0] + '.js'
+				companion_file_name = self.reference_file_name.rsplit('.', 1)[0] + '.ts'
 				companion_file = base_path + 'routes/' + self.reference_file_location + '/' + companion_file_name
 		else:
 			companion_file_name = self.reference_file_name.rsplit('.', 1)[0] + '.hbs'
